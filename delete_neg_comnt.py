@@ -1,11 +1,10 @@
-#import libraries for natural language processing
 from textblob import TextBlob
 from textblob.sentiments import NaiveBayesAnalyzer
 from get_post_id import *
 from constants import *
 import requests
 
-#define a function for deleting the negative comment
+# A function for deleting the negative comment
 def del_neg_comment(insta_username):
     post_id = get_post_id(insta_username)
     request_url = (BASE_URL + 'media/%s/comments/?access_token=%s') % (post_id, APP_ACCESS_TOKEN)
